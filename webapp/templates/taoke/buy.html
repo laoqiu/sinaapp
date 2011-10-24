@@ -1,0 +1,39 @@
+{% extends "taoke/base.html" %}
+{% block title %}购买{{ item['title'] }}{% endblock %}
+
+{% block content %}
+<div id="taobao-item">
+    {%- if item %}
+    <div class="txt">
+        <h3>{{ item['title'] }}</h3>
+        <p>价格：<span class="price">{{ item['price'] }}</span>
+        购买返利：<span class="price">{{
+            (item.get('commission',0) * 0.5)|round(1) }}</span></p>
+        <p><span>商品来自 淘宝网</span>  <span>卖家：{{ item['nick']
+        }}</span></p>
+        <p>
+        {%- if item.get('score') %}
+            <span>卖家信用：<img src="{{ url_for('.static', filename='styles/taoke/images/taobaorank%s.gif' % item['score']) }}" alt="{{ item['score'] }}" /> </span>
+        {%- endif %}
+        {%- if item.get('volume') %}
+            <span>30天卖出：{{ item['volume'] }}</span>
+        {%- endif %}
+        </p>
+    </div>
+    <div id="taoke-img" class="pic">
+        <ul>
+            <li><img src="{{ item['pic_url'] }}" alt="{{ item['title'] }}"></li>
+        </ul>
+    </div>
+    <div id="taoke-buy">
+        <a href="{{ item['click_url'] }}"><img src="{{ url_for('.static', filename='styles/taoke/images/buy.png') }}" alt="立即购买" /></a>
+    </div>
+    {%- else %}
+        <div class="txt">
+            <h3>没有找到商品，可能商品已被淘宝商家下架处理...</h3>
+        </div>
+    {%- endif %}
+</div>
+</body>
+{% endblock %}
+

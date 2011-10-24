@@ -1,0 +1,52 @@
+{% macro pagination(page_obj,page_url) %}
+{% if page_obj.pages > 1 %}
+<div class="pagination">
+    {% if page_obj.has_prev %}
+    <a href="{{ page_url(page_obj.page - 1) }}">&lt;&lt;</a> 
+    {% else %}
+    <span class="disabled">&lt;&lt;</span> 
+    {% endif %}
+    {% for i in page_obj.iter_pages() %}
+        {% if i %}
+            {% if i==page_obj.page %}<span class="current">{{ i }}</span>{% else
+            %}<a href="{{ page_url(i) }}">{{ i }}</a>{% endif %} 
+        {% else %}
+          <span class="ellipsis">…</span> 
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <a href="{{ page_url(page_obj.page + 1) }}">&gt;&gt;</a> 
+    {% else %}
+    <span class="disabled">&gt;&gt;</span> 
+    {% endif %}
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro ajax_pagination(page_obj, page_url) %}
+{% if page_obj.pages>1 %}
+<div class="pages">
+    {% if page_obj.has_prev %}
+    <a href="javascript:;" url="{{ page_url(page_obj.prev_num) }}" class="ajax_page">上一页</a> 
+    {% else %}
+    <span class="disabled">上一页</span> 
+    {% endif %}
+    {% for page in page_obj.iter_pages() %}
+        {% if page %}
+            {% if page==page_obj.page %}
+            <strong class="current">{{ page }}</strong>
+            {% else %}
+            <a href="javascript:;" url="{{ page_url(page) }}" class="ajax_page">{{ page }}</a>
+            {% endif %}
+        {% else %}
+          <span class="ellipsis">…</span>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <a href="javascript:;" url="{{ page_url(page_obj.next_num) }}" class="ajax_page">下一页</a>
+    {% else %}
+    <span class="disabled">下一页</span>
+    {% endif %}
+</div>
+{% endif %}
+{% endmacro %}

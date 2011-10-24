@@ -1,0 +1,57 @@
+{% extends "taoke/base.html" %}
+{% block title %}申请提现{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('.static',filename='styles/taoke/taoke.css') }}" />
+{% endblock %}
+
+{% block content %}
+<div id="cash-box">
+    <h2>申请提现</h2>
+    <div class="box">
+        <div class="cash-form">
+            {% from "macros/_forms.html" import render_errors %}
+            <form action="" method="POST">
+            {{ form.hidden_tag() }}
+            <table>
+                <tr>
+                    <th>您的支付宝账户:</th>
+                    <td>
+                    {%- if g.user.alipay %}
+                        {{ g.user.alipay }}
+                        {{ form.alipay(type="hidden") }}
+                    {%- else %}
+                        {{ form.alipay(class='text') }}
+                        {{ render_errors(form.alipay) }}
+                    {%- endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>提现金额:</th>
+                    <td>
+                    {{ form.money(class='text') }}
+                    {{ render_errors(form.money) }}
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>可用金额：<span class="price">{{ g.user.money }}</span>元 <a href="{{ url_for('taoke.finance_records') }}">查看账户记录</a></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>
+                    <input src="{{ url_for('.static', filename='styles/taoke/images/cash-btn.png') }}" alt="确认提交" type="image" />
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td>申请提现将在24小时内为您处理</td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
+

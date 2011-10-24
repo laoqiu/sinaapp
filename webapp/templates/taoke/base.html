@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>{%- block title %}{%- endblock %} - 推呗 - 在微博上分享淘宝商品，让我们一起推呗</title>
+    <link rel="stylesheet" href="{{ url_for('.static',filename='styles/taoke/taoke.css') }}" />
+    {%- block head %}
+
+    {%- endblock %}
+    <!--[if IE 6]>
+    <script src="{{ url_for('.static', filename='styles/taoke/DD_belatedPNG.js') }}"></script>
+    <script>
+      DD_belatedPNG.fix('#logo, .pngfix, .ico');
+    </script>
+    <![endif]--> 
+</head>
+<body>
+<div class="wrapper">
+    <div id="header" class="wrap">
+        <div id="logo">
+            <a href="/"><img src="{{ url_for('.static', filename='styles/taoke/images/logo.png') }}" alt="推呗logo" /></a>
+        </div>
+        <div id="nav">
+        	<ul>
+        		<li class="home">
+        			<a href="/" class="current">首页</a>
+        		</li>
+        		<li class="post">
+        			<a href="/post" class="current">推宝贝</a>
+        		</li>
+        		<li class="cash">
+        			<a href="/cash" class="current">我要提现</a>
+        		</li>
+        	</ul>
+        </div>    
+    </div>
+    <div id="content" class="wrap">
+        {%- block content %}
+        {%- endblock %}
+    </div>
+</div>
+<script src="http://tjs.sjs.sinajs.cn/t35/apps/opent/js/frames/client.js" language="JavaScript"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "taoke/base.html" %}
+{% block title %}账户记录{% endblock %}
+
+{% block content %}
+<div id="cash-box">
+    <h2>账户余额 <span class="price">{{ g.user.money }}</span> 元</h2>
+    <div class="box">
+        <div class="record-form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>收入</th>
+                        <th>支出</th>
+                        <th>备注</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {%- if page_obj.items %}
+                    {%- for i in page_obj.items %}
+                    <tr>
+                        <td>{{ i.created_date.strftime('%Y-%m-%d %H:%M') }}</td>
+                        <td>{%- if i.money>0 %}{{ i.money }}{%- endif %}</td>
+                        <td>{%- if i.money<0 %}{{ i.money }}{%- endif %}</td>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.get_status }}</td>
+                    </tr>
+                    {%- endfor %}
+                {%- else %}
+                    <tr>
+                        <td colspan="5">
+                            <p class="nodata">暂无记录</p>
+                        </td>
+                    </tr>
+                {%- endif %}
+                </tbody>
+            </table>
+            {% from "macros/_page.html" import pagination %}
+            {{ pagination(page_obj, page_url) }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

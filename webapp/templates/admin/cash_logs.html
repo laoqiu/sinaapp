@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>admin</title>
+<style type="text/css">
+table {
+    width: 800px;    
+}
+table, th, td {
+    padding: 5px 10px;
+    border: 1px solid #666;    
+    border-collapse: collapse;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+	<table>
+        <thead>
+            <tr>
+				<th>时间</th>
+				<th>金额</th>
+				<th>用户</th>
+				<th>支付宝</th>
+				<th>状态</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+        {%- for i in page_obj.items %}
+        	<tr>
+        		<td>{{ i.created_date.strftime('%Y-%m-%d %H:%M') }}</td>
+        		<td>{{ i.money }}</td>
+        		<td>{{ i.user.nickname }}</td>
+        		<td>{{ i.user.alipay }}</td>
+        		<td>{{ i.get_status }}</td>
+                <td>
+                	<a href="{{ url_for('admin.cashed', record_id=i.id) }}">处理成功</a>
+                </td>
+        	</tr>
+        {%- endfor %}
+        </tbody>
+	</table>
+</body>
+</html>

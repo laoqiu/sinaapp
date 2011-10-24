@@ -1,0 +1,254 @@
+body {
+    font: 12px "Microsoft YaHei",Arial,Helvetica,sans-serif;
+    color: #59493f;
+    background: #ded5ce url(images/bg-body.png) no-repeat center top;	
+}
+
+ul,ol,li,dl,dt,dd,p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;    
+    padding: 0;
+}
+ul,ol,li {
+    list-style: none;    
+}
+
+a {
+    color: #00a0e9;
+}
+a:hover {
+    color: #f60;
+}
+a img {
+	border: 0;
+}
+
+.price {
+    color: #ff0058;
+}
+.clear {
+   clear: both; 
+}
+.errors {
+    color: #e00;    
+}
+
+.tips {
+    margin-bottom: 10px;
+    text-align: center;    
+}
+
+.wrapper {
+    background: url(images/bg-content.png) no-repeat center 390px;
+}
+
+.wrap {
+    margin: auto;
+    width: 590px;    
+}
+
+#header {
+    text-align: center;
+}
+
+#logo {
+    padding: 10px 0;
+}
+
+#nav {
+    margin: 0 auto 10px;
+    width: 384px;
+    height: 58px;
+    font-size: 14px;
+    background: url(images/sp.png) no-repeat left -35px;
+}
+#nav li {
+    display: block;
+    float: left;
+    width: 120px;
+    height:34px;
+    line-height: 35px;
+}
+#nav li a {
+    color: #fff;
+    text-decoration: none;
+}
+#nav li.home {
+    padding-left: 15px;
+}
+#nav li.post {
+    padding-left: 13px;
+}
+#nav li.cash {
+    padding-left: 20px;
+    width: 96px;
+}
+
+#home-tutorial {
+    margin: 0 0 20px;
+    padding: 0 10px;
+}
+#home-tutorial h2 {
+    margin: 0 auto 20px;
+    width: 442px;
+    height: 24px;
+    text-indent: -999px;
+    background: url(images/sp.png) no-repeat left -270px;
+}
+#home-tutorial ul li {
+    padding-left: 38px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+}
+#home-tutorial ul {
+    background: url(images/sp.png) no-repeat -465px -5px;
+}
+
+#home-slide {
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+#post a {
+    margin: auto;
+    display: block;
+    width: 382px;
+    height: 90px;
+    overflow: hidden;
+    text-align: center;
+    background: url(images/sp.png) no-repeat -4px -155px;
+    text-indent: -999px;
+}
+
+#post-form {
+    margin: 0 auto 10px;
+    width: 465px;
+    height: 35px;
+    overflow: hidden;
+    text-align: center;
+    background: url(images/sp.png) no-repeat 0 -110px;
+}
+
+#post-input {
+    margin-left: 10px;
+    width: 330px;
+    height: 32px;
+    font-size: 14px;
+    background: none;
+    border: 0;
+}
+
+#post-submit {
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    background: none;
+    border: 0;
+}
+
+#taobao-item {
+    text-align: center;
+    line-height: 24px;
+}
+
+#taobao-item h3 {
+    padding: 10px 0;
+    font-size: 16px;
+}
+#taobao-item .txt {
+    margin-bottom: 15px;
+}
+#taobao-item .pic {
+    margin: auto;
+    width: 480px;
+}
+#taobao-item .pic li {
+    float: left;
+    display: block;
+    margin: 0 10px;
+    padding: 5px;
+    width: 210px;
+    background: #fff;
+}
+#taobao-item .pic img {
+    float: left;
+    width: 210px;
+}
+
+#tweet-post {
+    padding: 15px 0;
+    text-align: center;
+}
+
+#cash-box h2 {
+    padding: 20px 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+#cash-box .box {
+    margin: auto;
+    padding: 20px 0;
+    width: 550px;
+    background: #fff;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow:2px 2px 5px #999;
+    -moz-box-shadow: 2px 2px 5px #999;
+}
+#cash-box .box table {
+    margin: auto;
+}
+
+.cash-form table {
+    width: 460px;
+}
+.cash-form table th {
+    text-align: right;
+    width: 120px;
+    font-size: 14px;
+}
+.cash-form table td {
+    padding: 5px;    
+}
+.cash-form input.text {
+    padding: 3px;
+    width: 160px;
+    font-size: 14px;
+    border: 1px solid #ccc;    
+}
+.record-form table {
+    width: 520px;    
+}
+.record-form table,
+.record-form table th,
+.record-form table td {
+    padding: 5px;
+    border: 1px solid #fff;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.record-form table th {
+    background: #e6f0cd;
+}
+.record-form .nodata {
+    padding: 10px;
+    color: #999;
+}
+.record-form table tr.l2 {
+    background: #ede9e6;
+}
+
+#taobao-item #taoke-img {
+    width: 240px;
+}
+#taoke-buy {
+    clear: both;
+    padding: 25px 0;
+    text-align: center;
+}
+
+

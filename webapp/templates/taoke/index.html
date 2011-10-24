@@ -1,0 +1,21 @@
+{% extends "taoke/base.html" %}
+{% block title %}首页{% endblock %}
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<div id="home-tutorial">
+    <h2>在微博上分享淘宝商品，让我们一起推呗。</h2>
+    <ul>
+        <li>在淘宝上找到喜欢的宝贝，将url地址输入推呗，将生成返利图片和内容，分享到微博</li>
+        <li>喜欢此宝贝的朋友通过分享购买到宝贝，将获得返利，分享者也将获得推荐返利</li>
+    </ul>
+</div>
+<div id="home-slide">
+    <img src="{{ url_for('.static', filename='styles/taoke/images/slide.png') }}" alt="图片效果" />
+</div>
+<div id="post">
+    <a href="/post">复制淘宝地址分享宝贝获取返利</a>
+</div>
+{% endblock %}
+
