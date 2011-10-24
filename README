@@ -1,3 +1,41 @@
 新浪应用与淘宝应用
 
-待写....
+用新浪帐户登录，授权应用，
+通过淘宝地址，获取淘宝商品，
+分享到新浪微博，不论买家还是发博文的，都能得到淘宝客返利
+
+PS.这是一个完整的应用，UI都有，但只能当flask的学习项目了，淘宝app没能通过审核
+如果能申请到淘宝上线app，还是蛮好玩的应用 
+
+应用主要的功能：
+1.auth模块的openid处理
+2.淘宝api的调用
+3.商品图片处理
+
+
+介绍下项目内容：
+weibo----微博SDK, qq, sina
+webapp
+|---__init__.py   
+|---config.cfg    flask配置
+|---extensions.py 插件, 新浪微博appkey，淘宝appkey在这里设置
+|---helpers.py    一些函数(注：大部分来自flask网站的snippets和newsmeme里)
+|---models        数据models
+|    |---....
+|
+|---forms         表单forms
+|    |---....
+|
+|---scripts
+|    |---taobaoapi.py   方便调用taobao api的简单类
+|    |---mytimer.py     定时器，用于定时获取taobao api数据
+|    |---models.py      定时获取用到的models
+|    |---mydb.py        从flask-sqlalchemy1.0以前取下来应用的插件
+|    |---taobao_func.py 淘宝api的调用函数
+|	 
+|---utils
+|    |---imageProcess.py   这个图片处理函数，加水印文字等
+|
+|---permissions.py      flask权限设置
+|---templates
+|---static
